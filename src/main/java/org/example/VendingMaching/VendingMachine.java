@@ -17,7 +17,7 @@ public class VendingMachine {
     // Tracks the current ongoing transaction
     private Transaction currentTransaction;
     // Represents the current state of the vending machine
-    private VendingMachineState currentState;
+//    private VendingMachineState currentState;
     // Tracks the current balance in the machine
     private double balance;
     // Stores the currently selected product code
@@ -28,7 +28,7 @@ public class VendingMachine {
         currentTransaction = new Transaction();
         inventoryManager = new InventoryManager();
         paymentProcessor = new PaymentProcessor();
-        this.currentState = new NoMoneyInsertedState();
+//        this.currentState = new NoMoneyInsertedState();
         this.balance = 0.0;
         this.selectedProduct = null;
     }
