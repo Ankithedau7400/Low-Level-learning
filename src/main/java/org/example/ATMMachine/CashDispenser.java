@@ -1,0 +1,7 @@
+package org.example.ATMMachine;
+
+import java.math.BigDecimal;
+
+public interface CashDispenser {
+    void dispenseCash(BigDecimal amount);
+}
