@@ -24,4 +24,8 @@ public class OrderItem {
     public BigDecimal calculatePriceWithDiscount(DiscountCampaign newDiscount) {
         return newDiscount.calculateDiscount(this);
     }
+
+    public Item getItem(){
+        return item;
+    }
 }

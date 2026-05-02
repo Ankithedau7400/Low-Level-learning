@@ -12,15 +12,6 @@
             </PendingDiffInfo>
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/org/example/ATMMachine/WithdrawTransaction.java">
-          <value>
-            <PendingDiffInfo>
-              <option name="filePath" value="$PROJECT_DIR$/src/main/java/org/example/ATMMachine/WithdrawTransaction.java" />
-              <option name="originalContent" value="package org.example.ATMMachine;&#10;&#10;import java.math.BigDecimal;&#10;&#10;public class WithdrawTransaction implements Transaction {&#10;    Account account;&#10;    BigDecimal amount;&#10;&#10;    // Returns the transaction type as WITHDRAW&#10;    @Override&#10;    public TransactionType getType() {&#10;        return TransactionType.WITHDRAW;&#10;    }&#10;&#10;    @Override&#10;    public boolean validateTransaction() {&#10;        assert account != null;&#10;        return account.getBalance().compareTo(amount) &gt; 0;&#10;    }&#10;&#10;    public WithdrawTransaction(Account account, BigDecimal amount) {&#10;        if (!validateTransaction()) {&#10;            throw new IllegalStateException(&#10;                    &quot;Cannot complete withdrawal: Insufficient funds in account&quot;);&#10;        }&#10;        this.account = account;&#10;        this.amount = amount;&#10;    }&#10;&#10;    @Override&#10;    public void executeTransaction() {&#10;        account.updateBalanceWithTransaction(amount.negate());&#10;    }&#10;&#10;&#10;}&#10;" />
-              <option name="updatedContent" value="package org.example.ATMMachine;&#10;&#10;import java.math.BigDecimal;&#10;&#10;public class WithdrawTransaction implements Transaction {&#10;    Account account;&#10;    BigDecimal amount;&#10;&#10;    // Returns the transaction type as WITHDRAW&#10;    @Override&#10;    public TransactionType getType() {&#10;        return TransactionType.WITHDRAW;&#10;    }&#10;&#10;    @Override&#10;    public boolean validateTransaction() {&#10;        assert account != null;&#10;        return account.getBalance().compareTo(amount) &gt;= 0;&#10;    }&#10;&#10;    public WithdrawTransaction(Account account, BigDecimal amount) throws InvalidTransactionException {&#10;        this.account = account;&#10;        this.amount = amount;&#10;        if (!validateTransaction()) {&#10;            throw new InvalidTransactionException(&quot;Cannot complete withdrawal: Insufficient funds in account&quot;);&#10;        }&#10;    }&#10;&#10;    @Override&#10;    public void executeTransaction() {&#10;        account.updateBalanceWithTransaction(amount.negate());&#10;    }&#10;&#10;&#10;}" />
-            </PendingDiffInfo>
-          </value>
-        </entry>
       </map>
     </option>
   </component>
